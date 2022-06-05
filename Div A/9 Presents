@@ -1,0 +1,69 @@
+// Link : https://codeforces.com/contest/136/problem/A
+#include <bits/stdc++.h>
+using namespace std;
+#define int long long
+#define rep(i, a, b) for (int i = a; i < b; ++i)
+#define rrep(i, z, a) for (int i = z; i >= a; --i)
+#define rep0(n) for (int i = 0; i < n; ++i)
+#define rep1(n) for (int i = 1; i <= n; ++i)
+#define tc       \
+    int test;    \
+    cin >> test; \
+    while (test--)
+#define pb push_back
+#define ff first
+#define ss second
+#define mp make_pair
+#define endl "\n"
+#define IOS                  \
+    ios::sync_with_stdio(0); \
+    cin.tie(0);              \
+    cout.tie(0);
+#define extime cout << endl \
+                    << endl \
+                    << "______" << (float)clock() / CLOCKS_PER_SEC << "s_____";
+#define maxn 998244353
+#define mod 1000000007
+
+typedef pair<int, int> pi;
+typedef vector<int> vi;
+typedef vector<pi> vii;
+typedef map<int, int> mi;
+typedef map<char, int> mchar;
+
+void OJ()
+{
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
+}
+int lucky[] = {4, 7, 47, 74, 44, 77, 444, 777, 447, 474, 477, 747, 774, 744};
+int solve()
+{
+    int n;
+    cin >> n;
+    mi m;
+    rep0(n)
+    {
+        int x;
+        cin >> x;
+        m[x] = i + 1;
+    }
+    rep0(n)
+    {
+        cout << m[i + 1] << " ";
+    }
+    cout << endl;
+    return 0;
+}
+
+signed main()
+{
+
+    OJ();
+    IOS
+    // tc
+    solve();
+    // extime
+    ret
