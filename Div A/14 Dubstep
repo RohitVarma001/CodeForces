@@ -1,0 +1,102 @@
+// Link : https://codeforces.com/contest/208/problem/A
+#include <bits/stdc++.h>
+using namespace std;
+#define int long long
+#define rep(i, a, b) for (int i = a; i < b; ++i)
+#define rrep(i, z, a) for (int i = z; i >= a; --i)
+#define rep0(n) for (int i = 0; i < n; ++i)
+#define rep1(n) for (int i = 1; i <= n; ++i)
+#define tc       \
+    int test;    \
+    cin >> test; \
+    while (test--)
+#define all(v) v.begin(), v.end()
+#define pb push_back
+#define ff first
+#define ss second
+#define mp make_pair
+#define endl "\n"
+#define spc " "
+#define IOS                  \
+    ios::sync_with_stdio(0); \
+    cin.tie(0);              \
+    cout.tie(0);
+#define extime cout << endl \
+                    << endl \
+                    << "____" << (float)clock() / CLOCKS_PER_SEC << "s____";
+#define maxn 998244353
+#define mod 1000000007
+//#define ll          long long int
+// typedef vector<ll>  vll;
+typedef pair<int, int> pi;
+typedef vector<int> vi;
+typedef vector<pi> vii;
+typedef map<int, int> mapi;
+typedef map<char, int> mapchar;
+void OJ()
+{
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
+}
+// bool sortrev(const pair<int,int> &a,  const pair<int,int> &b)
+// {
+//   return (a.first > b.first);
+// }
+// int n,m;
+// int graph[10001][10001];
+// int vis[10001][10001];
+// bool isValid(int x,int y){
+//   if(x<0||y<0||x>=n||y>=m)return 0;
+//   if(vis[x][y])return 0;
+//   return 1;
+// }
+// void dfs(int x,int y){
+//   vis[x][y] = 1;
+//   cout<<graph[x][y]<<" ";
+//   if(isValid(x-1,y))dfs(x-1,y);
+//   if(isValid(x,y+1))dfs(x,y+1);
+//   if(isValid(x+1,y))dfs(x+1,y);
+//   if(isValid(x,y-1))dfs(x,y-1);
+// }
+int solve()
+{
+    string s, ans = "";
+    cin >> s;
+    int i = 0;
+    int n = s.size();
+    while (i < s.size())
+    {
+        if (i + 1 >= n || i + 2 >= n)
+        {
+            while (i < n)
+                ans += s[i], i++;
+        }
+        else
+        {
+            if (s[i] == 'W' && s[i + 1] == 'U' && s[i + 2] == 'B')
+            {
+                if (ans[ans.size() - 1] != ' ')
+                    ans += ' ';
+                i += 3;
+            }
+            else
+            {
+                ans += s[i];
+                i++;
+            }
+        }
+    }
+    cout << ans << endl;
+    return 0;
+}
+signed main()
+{
+    OJ();
+    IOS
+    // tc
+    solve();
+    // extime
+    return 0;
+}
